@@ -1,0 +1,6 @@
+
+
+    select avg((YEAR(CURRENT_DATE) - YEAR(birthday_at)) - (DATE_FORMAT(CURRENT_DATE, '%m%d') < DATE_FORMAT(birthday_at, '%m%d'))) FROM users;
+
+    select weekday(date_format(birthday_at, '2021-%m-%d')) as 'day_number', count(*) as 'birthday\'s_count' from users group by weekday(date_format(birthday_at, '2021-%m-%d')) order by day_number;
+
